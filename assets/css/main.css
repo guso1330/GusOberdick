@@ -66,13 +66,14 @@ table {
 
 /* close commented backslash hack */
 html {
-  font-size: 100%; }
+  font-size: 100%;
+  height: 100%;
+  width: 100%; }
 
 body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1em;
-  color: #564e49;
-  height: 100%; }
+  color: #564e49; }
 
 a {
   text-decoration: none; }
