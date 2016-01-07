@@ -1,9 +1,22 @@
 $(function() {
     checkScroll();
-
+    smoothScroll(300);
     $('.blurb').fitText(1.2, { minFontSize: '16px', maxFontSize: '32px' });
 });
 
+function smoothScroll (duration) {
+  $('a[href^="#"]').on('click', function(event) {
+
+      var target = $( $(this).attr('href') );
+
+      if( target.length ) {
+          event.preventDefault();
+          $('html, body').animate({
+              scrollTop: target.offset().top
+          }, duration);
+      }
+  });
+}
 
 function checkScroll()
 {
