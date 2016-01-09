@@ -1,8 +1,16 @@
 $(function() {
     checkScroll();
     smoothScroll(300);
+    checkMobileNav();
     $('.blurb').fitText(1.2, { minFontSize: '16px', maxFontSize: '32px' });
 });
+
+function checkMobileNav() {
+  $('.mobile-nav-toggle').click(function(){
+    $('.mobile-nav').toggleClass('is-open');
+    $('.mobile-nav-toggle > span').toggleClass('teal');
+  });
+}
 
 function smoothScroll (duration) {
   $('a[href^="#"]').on('click', function(event) {
@@ -23,8 +31,9 @@ function checkScroll()
     // Hide Header on scroll down
     var didScroll;
     var lastScrollTop = 0;
-    var delta = 64;
+    var delta = 10;
     var navbarHeight = $('header').outerHeight();
+    var mobileNavHeight = $('.mobile-nav').outerHeight();
 
     $(window).scroll(function(event){
         didScroll = true;
@@ -49,10 +58,13 @@ function checkScroll()
         if (st > lastScrollTop && st > navbarHeight){
             // Scroll Down
             $('header').removeClass('head-down').addClass('head-up');
+            $('.mobile-nav').removeClass('mobile-down').addClass('mobile-up');
+
         } else {
             // Scroll Up
             if(st + $(window).height() < $(document).height()) {
                 $('header').removeClass('head-up').addClass('head-down');
+                $('.mobile-nav').removeClass('mobile-up').addClass('mobile-down');
             }
         }
         
