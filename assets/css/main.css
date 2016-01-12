@@ -153,24 +153,24 @@ header {
       height: 32px;
       float: right;
       align-items: center;
-      cursor: pointer; }
-      header .nav-bar .mobile-nav-toggle span,
-      header .nav-bar .mobile-nav-toggle span:before,
-      header .nav-bar .mobile-nav-toggle span:after {
+      cursor: pointer;
+      position: relative; }
+      header .nav-bar .mobile-nav-toggle span {
         content: "";
         display: block;
         height: 2px;
         width: 100%;
-        background: white;
-        position: relative; }
+        background: white; }
       header .nav-bar .mobile-nav-toggle span.teal {
         background: #39CCCC; }
-      header .nav-bar .mobile-nav-toggle span:before {
-        top: 10px; }
-      header .nav-bar .mobile-nav-toggle span:after {
-        top: -12px; }
-      header .nav-bar .mobile-nav-toggle:hover span, header .nav-bar .mobile-nav-toggle:hover span:after, header .nav-bar .mobile-nav-toggle:hover span:before {
-        background: #39CCCC; }
+      header .nav-bar .mobile-nav-toggle #menu-bar1 {
+        position: absolute;
+        left: 0px;
+        top: 4px; }
+      header .nav-bar .mobile-nav-toggle #menu-bar3 {
+        position: absolute;
+        left: 0px;
+        bottom: 4px; }
 
 .mobile-nav {
   z-index: 999;
@@ -189,7 +189,7 @@ header {
     .mobile-nav ul li {
       text-align: center;
       padding: 10px 0; }
-      .mobile-nav ul li:hover {
+      .mobile-nav ul li:hover, .mobile-nav ul li:focus {
         background: #3b3530; }
 
 .mobile-nav.is-open {
@@ -198,6 +198,8 @@ header {
 @media (max-width: 700px) {
   header .nav-bar {
     width: 90%; }
+    header .nav-bar h2 a:hover {
+      color: white; }
     header .nav-bar ul {
       display: none; }
     header .nav-bar .mobile-nav-toggle {
