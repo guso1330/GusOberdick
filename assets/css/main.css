@@ -251,6 +251,7 @@ header {
   -ms-flex-align: center; }
   .eye-candy img {
     width: 40vh;
+    height: 40vh;
     display: block;
     margin: 0 auto;
     padding-bottom: 50px; }
